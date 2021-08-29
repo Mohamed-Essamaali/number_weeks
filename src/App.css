@@ -2,37 +2,217 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.error {
+  color: red;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* .home {
+  background-image: "./newBorn.jpg";
+
+} */
+
+.navs {
+  display:  flex;
+  /* flex-direction: row-reverse; */
+  justify-content: center;
+  
+}
+.navs a {
+  padding: 1% 1.5%;
+  background: #161515;
+  margin: 0.3%;
+  width: 15%;
+  text-decoration: none;
+  color:  white;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+.home img {
+  margin :2%;
+  width: 70vw;
+  height: 75vh;
+  border: 5px solid orange;
+}
+.start-button{
+  font-size: 1.2rem;
+  padding: 0.5% 1.1%;
+  position: relative;
+  left:-40%;
+  top:-45vh
+
+}
+.buttons button{
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #292727;
+  margin: 2% 0 
+}
+
+.links {
+  display:  flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+}
+.links a {
+  text-decoration: none;
+  margin: 0.5% 0;
 }
 
-.App-link {
-  color: #61dafb;
+.display-weeks{
+  display: flex;
+  flex-direction: column;
+  background: rgb(233, 216, 233);
+  border: 2px solid greenyellow;
+  margin: 1% 2.5%
+}
+.display-weeks div{
+font-size: 1.2rem;
+color: indianred;
+}
+.display-container h3{
+  background:khaki;
+  border: 2px solid greenyellow;
+  margin: 1% 2.5%
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+
+/* query media  */
+
+@media (max-width: 980px) {
+
+  .navs{
+    /* font-size:0.7rem; */
+    justify-content: center;
   }
-  to {
-    transform: rotate(360deg);
+  .navs a {
+    font-size:0.8rem;
+    justify-content: center;
+    width: 20%;
   }
+  .home{
+    font-size: 0.5rem;
+   
+
+  }
+  .home img {
+    margin :2%;
+    width: 65vw;
+    height: 55vh;
+    border: 5px solid black;
+  }
+
+
+  form .input_data {
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
+    font-weight: 600;
+
+  }
+  form .input_data label,input{
+    width: 40%;
+
+  }
+  .buttons button{
+    font-size: 1rem;
+    font-weight: 600;
+    color: #181717;
+    margin:1%
+  }
+  
 }
+
+@media (max-width: 650px) {
+  .navs {
+    justify-content: center;
+  }
+
+  .navs a {
+    font-size: 0.8rem;
+    width: 25%
+  }
+  
+  .home{
+    font-size: 0.5rem;
+   
+
+  }
+  .home img {
+    width: 65vw;
+    height: 45vh;
+    border: 2px solid purple
+  }
+  .start-button{
+    font-size: 1.1rem;
+    padding: 0.5% 1.1%;
+    position: relative;
+    left:-40%;
+    top:-25vh
+  
+  }
+  form .input_data {
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
+    font-weight: 600;
+
+  }
+  form .input_data label,input{
+    width: 50%;
+
+  }
+  .buttons button{
+    font-size: 1rem;
+    font-weight: 600;
+    color: #181717;
+    margin:1%
+  }
+
+  
+}
+@media (max-width: 500px) {
+  .home{
+    font-size: 0.5rem;
+   
+
+  }
+  .home img {
+    width: 45vw;
+    height: 22vh;
+    border: 2px solid green
+  }
+  .start-button{
+    font-size: 0.9rem;
+    padding: 0.5% 1.1%;
+    position: relative;
+    left:-30%;
+    top:-12vh
+  
+  }
+
+  form .input_data {
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
+    font-weight: 600;
+
+  }
+  form .input_data label,input{
+    width: 50%;
+
+  }
+
+  .buttons button{
+    font-size: 1rem;
+    font-weight: 600;
+    color: #181717;
+    margin:1%
+  }
+  
+}
+
+

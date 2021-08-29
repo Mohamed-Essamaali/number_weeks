@@ -1,23 +1,33 @@
 import logo from './logo.svg';
+import Weeks from './components/number_weeks'
+import {Route} from 'react-router-dom'
 import './App.css';
+import DisplayData from './components/displayData';
+import Navs from './components/Navs';
+import HomePage from './components/homePage';
+import UsefullLinks from './components/Links';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <h1>Welcome to Due date Calculator</h1> */}
+      <Route path='/'>
+        <Navs/>
+      </Route>
+      <Route path='/main'>
+        <HomePage/>
+      </Route>
+      <Route exact path='/weeks'>
+        <Weeks/>
+      </Route>
+      <Route exact path ='/dueDate'>
+        <DisplayData/>
+      </Route>
+      <Route exact path ='/links'>
+        <UsefullLinks/>
+      </Route>
+      
     </div>
   );
 }
