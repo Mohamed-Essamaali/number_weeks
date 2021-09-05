@@ -15,7 +15,7 @@ function App() {
       <Route path='/'>
         <Navs/>
       </Route>
-      <Route path='/main'>
+      <Route exact path='/'>
         <HomePage/>
       </Route>
       <Route exact path='/weeks'>

@@ -34,10 +34,13 @@
 }
 .start-button{
   font-size: 1.2rem;
+  font-weight: 500;
   padding: 0.5% 1.1%;
   position: relative;
   left:-40%;
-  top:-45vh
+  top:-45vh;
+  background:#719e36;
+  border-radius: 10px;
 
 }
 .buttons button{

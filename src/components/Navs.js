@@ -6,7 +6,7 @@ const Navs = ()=>{
 
     return (
         <div className='navs'>
-            <Link to='/main'>Home</Link>
+            <Link to='/'>Home</Link>
             <Link to = '/weeks'>Find out due Date</Link>
 
         </div>
