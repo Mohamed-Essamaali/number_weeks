@@ -7,30 +7,30 @@ const Number_Weeks = ()=>{
 
     const {push} = useHistory()
 
-    const {dates,setDates,data,setData,display,setDisplay,error,setError,dueDate,setDueDate} = useContext(GlobalContext)
+    const {dates,setDates,data,setData,display,setDisplay,error,setError,dueDate,setDueDate,percent,setPercent} = useContext(GlobalContext)
 
     const handleChanges = e=>{
         setDates({...dates,[e.target.name]:e.target.value})
     }
 
-    const calcDue = async (e)=>{
-        e.preventDefault()
-        const t1 = new Date(dates.d1).getTime()+24*1000*3600
-        // const t2 = new Date().getTime()
-        // due is 40 weeks total from last period in ms
-        const t2 = await 40*7*24*3600*1000
-        console.log('current date ',dates.d1)
-        console.log('due date ',new Date(t1+t2))
+    // const calcDue = async (e)=>{
+    //     e.preventDefault()
+    //     const t1 = new Date(dates.d1).getTime()+24*1000*3600
+    //     // const t2 = new Date().getTime()
+    //     // due is 40 weeks total from last period in ms
+    //     const t2 = await 40*7*24*3600*1000
+    //     console.log('current date ',dates.d1)
+    //     console.log('due date ',new Date(t1+t2))
     
-        await setDueDate(new Date(t1+t2))
+    //     await setDueDate(new Date(t1+t2))
      
         
 
 
 
-    }
+    // }
 
-    const calcWeeks = async (e)=>{
+    const calcDue = async (e)=>{
         e.preventDefault()
         const t1 = new Date(dates.d1).getTime()
         const t2 = new Date().getTime()
@@ -43,6 +43,7 @@ const Number_Weeks = ()=>{
             const w = await Math.trunc(number_days/7)
 
             const r = await number_days - w*7
+            setPercent((w*7+r)/365)
             setData({weeks:w,days:r})
 
             // Calculate due date
@@ -63,19 +64,7 @@ const Number_Weeks = ()=>{
 
     return (
         <div>
-            {/* <div className = 'display_data'> */}
-                {/* {display?
-                <div>
-                    <h2>Data to be displayed</h2>
-                    <h4>{data.weeks} weeks</h4>
-                    <h4>{data.days} days</h4>
-                    {setError("")}
-                </div>:
-                
-                null
-                } */}
-                
-            {/* </div> */}
+        
             <form>
                 
                 <p className='error'>{error? error : null}</p>
@@ -86,7 +75,7 @@ const Number_Weeks = ()=>{
                 </div>
                
                 <div className='buttons'>
-                    <button onClick={calcWeeks}> Submit </button>
+                    <button onClick={calcDue}> Submit </button>
                     {/* <button onClick={calcDue}>Due date</button> */}
                     <button onClick={(e)=>{
                         e.preventDefault();
