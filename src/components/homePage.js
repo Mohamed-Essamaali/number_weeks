@@ -9,7 +9,7 @@ const HomePage = ()=>{
     const {push} = useHistory();
    
     const[name,setName] = useState("");
-    
+    var names = ["Hedaya","Nor Alhuda","Razan","Amira"];
     const luckyName(){
       var x = Math.random()*names.length;
         setName(names[Math.ceil(x)-1]);
